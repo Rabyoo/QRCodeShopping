@@ -45,7 +45,7 @@ const myAccount = () => {
               </div>{" "}
             </div>{" "}
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
-              <Link to="/HomeProducts" class="text-white py-4 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+              <Link to="/" class="text-white py-4 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                 {" "}
                 Shopping
               </Link>{" "}
