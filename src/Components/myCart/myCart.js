@@ -145,7 +145,7 @@ const myCart = () => {
               </Link>
               <br />
               <br />
-              <Link to="/HomeProducts" className="text-black  hover:underline">
+              <Link to="/" className="text-black  hover:underline">
                 Continuo Shopping <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
