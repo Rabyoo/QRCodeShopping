@@ -26,9 +26,6 @@ const ContactUs = () => {
               <h2 class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
                 Get in Touch
               </h2>
-              <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
-                In hac habitasse platea dictumst
-              </p>
             </div>
           </div>
 
@@ -38,9 +35,9 @@ const ContactUs = () => {
                 <p
                   data-aos="fade-right"
                   class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                  Class aptent taciti sociosqu ad litora torquent per conubia
-                  nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut
-                  scelerisque sagittis ante, ac tincidunt sem venenatis ut.
+                  For inquiries regarding orders, products, or general assistance, 
+                  our dedicated customer service team is here to help. You can contact 
+                  them via:
                 </p>
 
                 <ul data-aos="fade-right" class="mb-6 md:mb-0">
@@ -66,10 +63,10 @@ const ContactUs = () => {
                         Our Address
                       </h3>
                       <p class="text-gray-600 dark:text-slate-400">
-                        1230 Maecenas Street Donec Road
+                        6th destrect
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
-                        New York, EEUU
+                        Egypt, Giza
                       </p>
                     </div>
                   </li>
@@ -96,10 +93,10 @@ const ContactUs = () => {
                         Contact
                       </h3>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mobile: +1 (123) 456-7890
+                        Mobile: +201226414475
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mail: tailnext@gmail.com
+                        Mail: automotive.shop@gmail.com
                       </p>
                     </div>
                   </li>
