@@ -30,9 +30,9 @@ const AboutUs = () => {
               About <span class="text-indigo-600">Our Company</span>
             </h2>
             <p class="text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
-              commodi doloremque, fugiat illum magni minus nisi nulla numquam
-              obcaecati placeat quia, repellat tempore voluptatum.
+              When making purchases on behalf of the company, please prioritize essential 
+              items necessary for day-to-day operations. This includes office supplies, equipment, 
+              and any other materials crucial for your respective departments.
             </p>
           </div>
         </div>
