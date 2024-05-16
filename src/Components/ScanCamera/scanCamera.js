@@ -16,9 +16,12 @@ const ScanCamera = () => {
     }
 
     domReady(function () {
-      // If found you qr code
+      // If found your qr code
       function onScanSuccess(decodeText, decodeResult) {
-        alert("You Qr is : " + decodeText, decodeResult);
+        const confirmation = window.confirm("Your QR is : " + decodeText);
+        if (confirmation) {
+          window.open(decodeText, "_blank");
+        }
       }
 
       let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
