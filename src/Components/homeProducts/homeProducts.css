@@ -9,7 +9,7 @@
     background: no-repeat;
 }
 .group:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px #1180ff90;
 }
 .ml-12 {
     margin-left: 0rem;
