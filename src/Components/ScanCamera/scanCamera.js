@@ -4,27 +4,28 @@ import { Html5QrcodeScanner } from "html5-qrcode";
 
 const ScanCamera = () => {
   useEffect(() => {
-    const domReady = (fn) => {
+    function domReady(fn) {
       if (
         document.readyState === "complete" ||
         document.readyState === "interactive"
       ) {
-        setTimeout(fn, 1000);
+        setTimeout(fn, 200);
       } else {
         document.addEventListener("DOMContentLoaded", fn);
       }
-    };
+    }
 
-    domReady(() => {
-      const onScanSuccess = (decodeText, decodeResult) => {
-        alert("Your QR is: " + decodeText); // Fixed the alert message
-      };
+    domReady(function () {
+      // If found you qr code
+      function onScanSuccess(decodeText, decodeResult) {
+        alert("You Qr is : " + decodeText, decodeResult);
+      }
 
-      const htmlScanner = new Html5QrcodeScanner("my-qr-reader", {
+      let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
         fps: 10,
-        qrbox: 250, // Corrected the property name
+        qrbos: 250,
       });
-      htmlScanner.render(onScanSuccess);
+      htmlscanner.render(onScanSuccess);
     });
   }, []); // Added an empty dependency array to run the effect only once
 
@@ -36,6 +37,7 @@ const ScanCamera = () => {
           <div id="my-qr-reader"></div>
         </div>
       </div>
+      <script type="text/javascript" src="/utest/zxing-js.umd.js"></script>
       <script src="https://unpkg.com/html5-qrcode"></script>
     </div>
   );
