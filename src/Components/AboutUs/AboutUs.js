@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 // Aos
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Header from "../Header/Header";
 
 const AboutUs = () => {
 
@@ -14,6 +15,7 @@ const AboutUs = () => {
     }, []);
   return (
     <div className="aboutContent">
+      <Header />
       <div class="sm:flex items-center max-w-screen-xl">
         <div data-aos="fade-right" class="sm:w-1/2 p-10">
           <div class="image object-center text-center">
@@ -30,9 +32,9 @@ const AboutUs = () => {
               About <span class="text-indigo-600">Our Company</span>
             </h2>
             <p class="text-gray-700">
-              When making purchases on behalf of the company, please prioritize essential 
-              items necessary for day-to-day operations. This includes office supplies, equipment, 
-              and any other materials crucial for your respective departments.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
+              commodi doloremque, fugiat illum magni minus nisi nulla numquam
+              obcaecati placeat quia, repellat tempore voluptatum.
             </p>
           </div>
         </div>

@@ -24,35 +24,39 @@ import p7 from "./Components/Product/p7/Product7";
 import p8 from "./Components/Product/p8/Product8";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import AboutUs from "./Components/AboutUs/AboutUs";
+import ContextApi from "./ContextApi/ContextApi";
+import CheckOutItem from "./Components/CheckOutItem/CheckOutItem";
 
 function App() {
   return (
     <div className="App">
+      <ContextApi>
+        <Routes>
+          <Route path="/" exact Component={HomeProducts}></Route>
+          <Route path="/login" Component={Login}></Route>
+          <Route path="/Login" Component={Login}></Route>
+          <Route path="/myCart" Component={myCart}></Route>
+          <Route path="/Signup" Component={Signup}></Route>
+          <Route path="/checkout" Component={CheckOut}></Route>
+          <Route path="/checkoutItem" Component={CheckOutItem}></Route>
+          <Route path="/productDetails" Component={Product}></Route>
+          <Route path="/myAccount" Component={myAccount}></Route>
+          <Route path="/camera" Component={scanCamera}></Route>
+          <Route path="/contactUs" Component={ContactUs}></Route>
+          <Route path="/aboutUs" Component={AboutUs}></Route>
 
-      <Header />
-      <Routes>
-        <Route path="/" exact Component={HomeProducts}></Route>
-        <Route path="/login" Component={Login}></Route>
-        <Route path="/Login" Component={Login}></Route>
-        <Route path="/myCart" Component={myCart}></Route>
-        <Route path="/Signup" Component={Signup}></Route>
-        <Route path="/checkout" Component={CheckOut}></Route>
-        <Route path="/productDetails" Component={Product}></Route>
-        <Route path="/myAccount" Component={myAccount}></Route>
-        <Route path="/camera" Component={scanCamera}></Route>
-        <Route path="/contactUs" Component={ContactUs}></Route>
-        <Route path="/aboutUs" Component={AboutUs}></Route>
-
-        {/* Product Details */}
-        <Route path="/product/p1" Component={p1}></Route>
-        <Route path="/product/p2" Component={p2}></Route>
-        <Route path="/product/p3" Component={p3}></Route>
-        <Route path="/product/p4" Component={p4}></Route>
-        <Route path="/product/p5" Component={p5}></Route>
-        <Route path="/product/p6" Component={p6}></Route>
-        <Route path="/product/p7" Component={p7}></Route>
-        <Route path="/product/p8" Component={p8}></Route>
-      </Routes>
+          {/* Product Details */}
+          
+          <Route path="/product/p1" Component={p1}></Route>
+          <Route path="/product/p2" Component={p2}></Route>
+          <Route path="/product/p3" Component={p3}></Route>
+          <Route path="/product/p4" Component={p4}></Route>
+          <Route path="/product/p5" Component={p5}></Route>
+          <Route path="/product/p6" Component={p6}></Route>
+          <Route path="/product/p7" Component={p7}></Route>
+          <Route path="/product/p8" Component={p8}></Route>
+        </Routes>
+      </ContextApi>
     </div>
   );
 }

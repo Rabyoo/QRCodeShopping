@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import "./product.css";
-import img from "../../Assets/shoes1.jpg"
+import img from "../../Assets/shoes1.jpg";
+import Header from "../../Header/Header";
 
 const Product = () => {
   // const close = document.querySelector(".close");
@@ -12,6 +13,8 @@ const Product = () => {
 
   return (
     <div className="productDetails">
+      <Header />
+
       <div class="h-screen w-full flex items-center justify-center  bg-gray-200 dark:bg-gray-800">
         <article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700">
           <div>
@@ -27,7 +30,7 @@ const Product = () => {
               Shoes Adidas
             </h2>
             <span class="font-normal text-gray-600 dark:text-gray-300">
-              High quality product 
+              High quality product
             </span>
             <span class="font-semibold text-gray-800 dark:text-gray-50">
               $60
@@ -55,7 +58,9 @@ const Product = () => {
           </div>
 
           <div class="mt-4 p-4 border-t border-gray-200 dark:border-gray-500">
-            <Link to="/checkOut" class="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
+            <Link
+              to="/checkOut"
+              class="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
               <span class="text-base">CheckOut</span>
               <svg
                 class="h-6 w-6"

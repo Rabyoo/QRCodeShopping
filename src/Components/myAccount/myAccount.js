@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom/dist";
+import Header from "../Header/Header";
 
 const myAccount = () => {
   return (
     <div className="container">
+      <Header />
+
       <div class="p-16">
         <div class="p-8 bg-white shadow mt-24">
           {" "}
@@ -45,11 +48,15 @@ const myAccount = () => {
               </div>{" "}
             </div>{" "}
             <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
-              <Link to="/" class="text-white py-4 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+              <Link
+                to="/"
+                class="text-white py-4 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                 {" "}
                 Shopping
               </Link>{" "}
-              <Link to="/camera" class="text-white py-4 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+              <Link
+                to="/camera"
+                class="text-white py-4 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                 {" "}
                 QRCode Scanner
               </Link>{" "}

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./camera.css";
 import { Html5QrcodeScanner } from "html5-qrcode";
+import Header from "../Header/Header";
 
 const ScanCamera = () => {
   useEffect(() => {
@@ -34,6 +35,8 @@ const ScanCamera = () => {
 
   return (
     <div className="scanner">
+      <Header />
+
       <div className="container">
         <h1>Scan QR Codes</h1>
         <div className="section">

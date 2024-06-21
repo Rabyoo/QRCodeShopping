@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import img from "../../Assets/camera1.jpg"
+import Header from "../../Header/Header";
 // import "./product.css";
 
 const Product = () => {
@@ -12,6 +13,8 @@ const Product = () => {
 
   return (
     <div className="productDetails">
+      <Header />
+
       <div class="h-screen w-full flex items-center justify-center  bg-gray-200 dark:bg-gray-800">
         <article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700">
           <div>

@@ -1,0 +1,58 @@
+[
+    {
+        "id":1,
+        "name": "HeadPhone GBL",
+        "price": 3500,
+        "img": "/imgs/headphone1.png",
+        "quantity": 1
+    },
+    {
+        "id":2,
+        "name": "LapTop Original",
+        "price": 120,
+        "img": "/imgs/laptop1.png",
+        "quantity": 1
+    },
+    {
+        "id":3,
+        "name": "Phone Techno",
+        "price": 500,
+        "img": "/imgs/phone1.png",
+        "quantity": 1
+    },
+    {
+        "id":4,
+        "name": "Smart Watch Original",
+        "price": 1500,
+        "img": "/imgs/smart-watch1.png",
+        "quantity": 1
+    },
+    {
+        "id":5,
+        "name": "Shoes Adidas Original",
+        "price": 1320,
+        "img": "/imgs/shoes1.jpg",
+        "quantity": 1
+    },
+    {
+        "id":6,
+        "name": "Nike Shoes Havboot Original",
+        "price": 599,
+        "img": "/imgs/shoes2.jpg",
+        "quantity": 1
+    },
+    {
+        "id":7,
+        "name": "Nike Shoes Original",
+        "price": 800,
+        "img": "/imgs/shoes3.png",
+        "quantity": 1
+    },
+    {
+        "id":8,
+        "name": "Shoes NIKE Original",
+        "price": 750,
+        "img": "/imgs/shoes4.png",
+        "quantity": 1
+    }
+]

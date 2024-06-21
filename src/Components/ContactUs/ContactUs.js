@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 // Aos
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Header from "../Header/Header";
 
 const ContactUs = () => {
   useEffect(() => {
@@ -14,6 +15,8 @@ const ContactUs = () => {
 
   return (
     <div className="manContent">
+      <Header />
+
       <section class="bg-blue-50 dark:bg-slate-800" id="contact">
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div class="mb-4">
@@ -26,6 +29,9 @@ const ContactUs = () => {
               <h2 class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
                 Get in Touch
               </h2>
+              <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
+                In hac habitasse platea dictumst
+              </p>
             </div>
           </div>
 
@@ -35,9 +41,9 @@ const ContactUs = () => {
                 <p
                   data-aos="fade-right"
                   class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                  For inquiries regarding orders, products, or general assistance, 
-                  our dedicated customer service team is here to help. You can contact 
-                  them via:
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut
+                  scelerisque sagittis ante, ac tincidunt sem venenatis ut.
                 </p>
 
                 <ul data-aos="fade-right" class="mb-6 md:mb-0">
@@ -63,10 +69,10 @@ const ContactUs = () => {
                         Our Address
                       </h3>
                       <p class="text-gray-600 dark:text-slate-400">
-                        6th destrect
+                        1230 Maecenas Street Donec Road
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Egypt, Giza
+                        New York, EEUU
                       </p>
                     </div>
                   </li>
@@ -93,10 +99,10 @@ const ContactUs = () => {
                         Contact
                       </h3>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mobile: +201226414475
+                        Mobile: +1 (123) 456-7890
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mail: automotive.shop@gmail.com
+                        Mail: tailnext@gmail.com
                       </p>
                     </div>
                   </li>

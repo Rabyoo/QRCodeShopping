@@ -1,15 +1,15 @@
 import React from "react";
-import "./checkOut.css";
+import "./CheckOutItem.css";
 import { useContextApi } from "../../ContextApi/ContextApi";
 
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 
-const CheckOut = () => {
-  const { product, addToCart } = useContextApi();
-  const total = addToCart.reduce((current, item) => {
-    return current + item.price * (+item.quantity);
-  }, 0);
+const CheckOutItem = () => {
+  const { product } = useContextApi();
+//   const total = addToCart.reduce((current, item) => {
+//     return current + item.price * +item.quantity;
+//   }, 0);
   // console.log(total);
   return (
     <div classNameName="checkOutSection">
@@ -19,7 +19,7 @@ const CheckOut = () => {
         <div className="px-5">
           <div className="mb-2">
             <Link
-              to="/myCart"
+              to="/"
               className="focus:outline-none hover:underline text-gray-500 text-sm">
               <i className="mdi mdi-arrow-left text-gray-400"></i>Back
             </Link>
@@ -49,31 +49,27 @@ const CheckOut = () => {
             <div className="-mx-3 md:flex items-start">
               <div className="px-3 md:w-7/12 lg:pr-10">
                 <div className="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 pb-6">
-                  {addToCart.map((item) => {
-                    return (
-                      <div
-                        className="w-full mb-5 flex items-center"
-                        key={item.id}>
-                        <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
-                          <img src={item.img} alt="" />
-                        </div>
-                        <div className="flex-grow pl-3">
-                          <h6 className="font-semibold uppercase text-gray-600">
-                            {item.name}
-                          </h6>
-                          <p className="text-gray-400">x{item.quantity}</p>
-                        </div>
-                        <div>
-                          <span className="font-semibold text-gray-600 text-xl">
-                            {+item.price * +item.quantity}$
-                          </span>
-                          <span className="font-semibold text-gray-600 text-sm">
-                            .00
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <div
+                    className="w-full mb-5 flex items-center"
+                    key={product.id}>
+                    <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
+                      <img src={product.img} alt="" />
+                    </div>
+                    <div className="flex-grow pl-3">
+                      <h6 className="font-semibold uppercase text-gray-600">
+                        {product.name}
+                      </h6>
+                      <p className="text-gray-400">x{product.quantity}</p>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-600 text-xl">
+                        {+product.price * +product.quantity}$
+                      </span>
+                      <span className="font-semibold text-gray-600 text-sm">
+                        .00
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div className="mb-6 pb-6 border-b border-gray-200">
                   <div className="-mx-2 flex items-end justify-end">
@@ -124,7 +120,9 @@ const CheckOut = () => {
                       <span className="font-semibold text-gray-400 text-sm">
                         AUD
                       </span>{" "}
-                      <span className="font-semibold">{total}$</span>
+                      <span className="font-semibold">
+                        {product.price * product.quantity}$
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -290,4 +288,4 @@ const CheckOut = () => {
   );
 };
 
-export default CheckOut;
+export default CheckOutItem;

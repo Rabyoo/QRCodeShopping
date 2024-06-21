@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dcd98bca.css",
+    "main.js": "/static/js/main.18157307.js",
+    "static/js/453.6ed0bfc4.chunk.js": "/static/js/453.6ed0bfc4.chunk.js",
+    "static/media/headphone1.png": "/static/media/headphone1.028fbca6f449d322cb2e.png",
+    "static/media/smart-watch2.jpg": "/static/media/smart-watch2.5eae89e4105f602c76f5.jpg",
+    "static/media/phone1.png": "/static/media/phone1.981bde0c9f02be13315c.png",
+    "static/media/shoes1.jpg": "/static/media/shoes1.342eb4308dfb98653e99.jpg",
+    "static/media/shoes4.png": "/static/media/shoes4.c01b77a50c2a0fdf2161.png",
+    "static/media/camera1.jpg": "/static/media/camera1.59f7699207fa36817132.jpg",
+    "static/media/shoes5.png": "/static/media/shoes5.7c8507192ec0c5a3c298.png",
+    "index.html": "/index.html",
+    "main.dcd98bca.css.map": "/static/css/main.dcd98bca.css.map",
+    "main.18157307.js.map": "/static/js/main.18157307.js.map",
+    "453.6ed0bfc4.chunk.js.map": "/static/js/453.6ed0bfc4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcd98bca.css",
+    "static/js/main.18157307.js"
+  ]
+}
