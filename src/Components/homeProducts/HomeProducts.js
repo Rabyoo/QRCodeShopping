@@ -73,7 +73,7 @@ const HomeProducts = () => {
                     onClick={() => {
                       productByNow(item);
                     }}>
-                    By Now
+                    Bay Now
                   </Link>
                 </Link>
               );
