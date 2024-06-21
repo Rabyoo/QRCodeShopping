@@ -1,37 +1,36 @@
 import React, { useState } from "react";
 import "./signUp.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [isValid, setIsValid] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
+  const navigate = useNavigate("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform validation here
-    if (formData.password === formData.confirmPassword) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    fetch("https://automative-ecommerce.onrender.com/user/auth/register/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        username: userName,
+        confirm_password: confirmPass,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => data);
+    setEmail("");
+    setPassword("");
+    alert("Hello! ");
+    navigate("/myAccount");
   };
 
-  if (isValid) {
-    // Redirect to login page if data is valid
-    window.location.href = "/"; // Assuming '/login' is your login page URL
-  }
-  // handleChange();
-  // handleSubmit();
   return (
     <div className="signup-box">
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -42,7 +41,7 @@ const Signup = () => {
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form class="space-y-6" action="#" method="POST" />
+          <form class="space-y-6" method="POST" onSubmit={handleSubmit} />
           <div>
             <label
               for="email"
@@ -54,7 +53,10 @@ const Signup = () => {
                 id="name"
                 name="name"
                 type="text"
-                autocomplete="text"
+                onChange={(event) => {
+                  setUserName(event.target.value);
+                }}
+                value={userName}
                 required
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 
           shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
@@ -75,7 +77,10 @@ const Signup = () => {
                   id="email"
                   name="email"
                   type="email"
-                  autocomplete="email"
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                  value={email}
                   required
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm 
           ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
@@ -97,7 +102,10 @@ const Signup = () => {
                   id="password"
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
+                  value={password}
                   required
                   class="block w-full rounded-md border-0 
           py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
@@ -119,7 +127,10 @@ const Signup = () => {
                   id="password"
                   name="password"
                   type="password"
-                  autocomplete="current-password"
+                  onChange={(event) => {
+                    setConfirmPass(event.target.value);
+                  }}
+                  value={confirmPass}
                   required
                   class="block w-full rounded-md border-0 
           py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
@@ -131,11 +142,12 @@ const Signup = () => {
             <div>
               <button
                 type="submit"
+                onClick={handleSubmit}
                 class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 
         text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 
         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 
         focus-visible:outline-indigo-600">
-                <Link to="/">Sign Up</Link>
+                Sign Up
               </button>
             </div>
 

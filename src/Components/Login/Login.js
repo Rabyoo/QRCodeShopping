@@ -1,9 +1,35 @@
 import React, { useState } from "react";
 import "./login.css";
 import "../../tailwind.config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://automative-ecommerce.onrender.com/user/auth/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((err) => {
+        console.log(err);
+      });
+    setEmail("");
+    setPassword("");
+    alert("Hello! ");
+    navigate("/myAccount");
+  };
 
   return (
     <div className="login-box">
@@ -15,7 +41,11 @@ const Login = () => {
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form class="space-y-6" action="#" method="GET">
+          <form
+            class="space-y-6"
+            action="#"
+            method="GET"
+            onSubmit={handleSubmit}>
             <div>
               <label
                 for="email"
@@ -28,6 +58,10 @@ const Login = () => {
                   name="email"
                   type="email"
                   autocomplete="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
                   required
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -41,9 +75,7 @@ const Login = () => {
                 Password
               </label>
               <div class="text-sm">
-                <a
-                  href="#"
-                  class="text-indigo-600 hover:underline">
+                <a href="#" class="text-indigo-600 hover:underline">
                   Forgot password?
                 </a>
               </div>
@@ -53,21 +85,25 @@ const Login = () => {
                 id="password"
                 name="password"
                 type="password"
-                autocomplete="current-password"
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
                 required
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             <br />
             <div>
-              <Link
-                to="/myAccount"
+              <button
+                type="submit"
+                onClick={handleSubmit}
                 class="flex w-full justify-center rounded-md relative right-3.5
               bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6
               text-white shadow-sm hover:bg-indigo-500 focus-visible:outline
               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Login
-              </Link>
+              </button>
             </div>
 
             <div class="createAcount">

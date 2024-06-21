@@ -20,10 +20,6 @@ const HomeProducts = () => {
     Aos.init({
       duration: 1500,
     });
-
-    fetch("https://automative-ecommerce.onrender.com/user")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
   }, []);
   return (
     <div className="container">
@@ -73,7 +69,7 @@ const HomeProducts = () => {
                     onClick={() => {
                       productByNow(item);
                     }}>
-                    Bay Now
+                    Buy Now
                   </Link>
                 </Link>
               );
