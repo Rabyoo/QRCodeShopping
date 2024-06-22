@@ -8,30 +8,34 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate("");
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  fetch("https://automative-ecommerce.onrender.com/user/auth/login/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data?.message) {
-        alert(...data.message);
-      } else {
-        navigate("/myAccount");
-      }
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://automative-ecommerce.onrender.com/user/auth/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.message) {
+          alert(...data.message);
+        } else {
+          navigate("/myAccount");
+        }
+        if (email === "" || password === "") {
+          alert("Invalid email or password");
+          navigate("/login");
+        }
+      });
 
-  setEmail("");
-  setPassword("");
-};
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <div className="login-box">
@@ -56,15 +60,14 @@ const handleSubmit = (e) => {
               </label>
               <div class="mt-2">
                 <input
+                  required
                   id="email"
                   name="email"
                   type="email"
-                  autocomplete="email"
                   value={email}
                   onChange={(event) => {
                     setEmail(event.target.value);
                   }}
-                  required
                   style={{ padding: "8px 6px" }}
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -85,6 +88,7 @@ const handleSubmit = (e) => {
             </div>
             <div class="mt-2">
               <input
+                required
                 id="password"
                 name="password"
                 type="password"
@@ -92,7 +96,6 @@ const handleSubmit = (e) => {
                 onChange={(event) => {
                   setPassword(event.target.value);
                 }}
-                required
                 style={{ padding: "8px 6px" }}
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
