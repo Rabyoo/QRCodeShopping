@@ -8,28 +8,30 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("https://automative-ecommerce.onrender.com/user/auth/login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => {
-        console.log(err);
-      });
-    setEmail("");
-    setPassword("");
-    alert("Hello! ");
-    navigate("/myAccount");
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  fetch("https://automative-ecommerce.onrender.com/user/auth/login/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data?.message) {
+        alert(...data.message);
+      } else {
+        navigate("/myAccount");
+      }
+    });
+
+  setEmail("");
+  setPassword("");
+};
 
   return (
     <div className="login-box">
@@ -63,6 +65,7 @@ const Login = () => {
                     setEmail(event.target.value);
                   }}
                   required
+                  style={{ padding: "8px 6px" }}
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -90,6 +93,7 @@ const Login = () => {
                   setPassword(event.target.value);
                 }}
                 required
+                style={{ padding: "8px 6px" }}
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>

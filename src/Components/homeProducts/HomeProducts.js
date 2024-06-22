@@ -46,7 +46,7 @@ const HomeProducts = () => {
 
                   <Link
                     to="/myCart"
-                    className="flex align-middle bg-none"
+                    className="flex relative left-4 hover:underline align-middle bg-none"
                     style={{ marginLeft: "55px", fontWeight: "bold" }}
                     onClick={() => {
                       addCart(item);
